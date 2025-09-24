@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
   const fetchComplaints = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/complaints');
+      const response = await axios.get('https://citizen-connect-api-e52n.onrender.com/api/admin/complaints');
       setComplaints(response.data);
     } catch (err) {
       console.error('Failed to fetch complaints:', err);
@@ -26,7 +26,7 @@ const AdminDashboard = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin/complaints/${id}`, { status });
+      await axios.put(`https://citizen-connect-api-e52n.onrender.com/api/admin/complaints/${id}`, { status });
       fetchComplaints();
     } catch (err) {
       console.error('Failed to update status:', err);

@@ -20,7 +20,7 @@ const Complaints = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/complaints', {
+      await axios.post('https://citizen-connect-api-e52n.onrender.com/api/complaints', {
         title: formData.issue,
         description: `Name: ${formData.name}, Age: ${formData.age}, Phone: ${formData.phone}, Municipality: ${formData.municipality}, District: ${formData.district}, State: ${formData.state}`,
         location: `${formData.municipality}, ${formData.district}, ${formData.state}`,

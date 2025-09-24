@@ -15,7 +15,6 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check local storage for user login status on initial load
     const userStatus = localStorage.getItem('userLoggedIn');
     if (userStatus === 'true') {
       setIsUserLoggedIn(true);
@@ -27,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={import.meta.env.DEV ? '/' : '/citizen-connect'}>
       <Navbar username={username} isUserLoggedIn={isUserLoggedIn} setIsUserLoggedIn={setIsUserLoggedIn} />
       <div className="main-content">
         <Routes>
